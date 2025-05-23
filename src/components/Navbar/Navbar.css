@@ -1,0 +1,62 @@
+/* Navbar.css */
+
+/* Base nav link styles */
+.nav-link {
+  position: relative;
+  padding-bottom: 4px;
+  transition: all 0.3s ease;
+  color: #fff; /* Tailwind gray-800 */
+  text-decoration: none;
+}
+
+/* Hover underline effect */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: #11572c; /* Tailwind green-500 */
+  transition: width 0.3s ease;
+}
+
+/* On hover or active page */
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+
+/* Mobile menu container animation */
+.links {
+  transition: max-height 0.4s ease;
+}
+
+/* Smooth open/close for small screens */
+@media (max-width: 768px) {
+  .links {
+    overflow: hidden;
+  }
+
+  .links.hidden {
+    max-height: 0;
+  }
+
+  .links.block {
+    max-height: 500px; /* adjust based on content height */
+  }
+
+  .list-div {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .menu {
+    z-index: 20;
+  }
+}
